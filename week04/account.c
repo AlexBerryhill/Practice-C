@@ -17,9 +17,9 @@ int get_account(void){
 }
 
 char * get_name(void){
-    static char name[30];
+    char *name = malloc(sizeof(char) * 100);
     printf("Enter the name of the account: ");
-    scanf("%s", &name);
+    scanf("%s", name);
     return name;
 }
 
@@ -34,6 +34,7 @@ void set_account_struct(struct account* account){
     account->account_number = get_account();
     account -> name = get_name();
     account->balance = get_balance();
+    
     printf("\n");
 }
 
